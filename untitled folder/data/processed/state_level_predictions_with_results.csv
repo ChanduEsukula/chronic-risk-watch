@@ -1,0 +1,51 @@
+LocationAbbr,LocationDesc,YearStart,diabetes_adults,diabetes_next_year,high_risk_diabetes_next_year,predicted_high_risk,predicted_probability_high_risk,prediction_result
+WV,West Virginia,2021,13.3,14.6,1,1,0.9999200849428362,True Positive
+MS,Mississippi,2021,13.8,13.9,1,1,0.9998776406629912,True Positive
+AL,Alabama,2021,13.5,13.6,1,1,0.999529430207145,True Positive
+LA,Louisiana,2021,12.5,13.3,1,1,0.997490412338124,True Positive
+TN,Tennessee,2021,12.3,13.1,1,1,0.9970784336284438,True Positive
+KY,Kentucky,2021,12.5,13.0,1,1,0.9928343485095809,True Positive
+OK,Oklahoma,2021,11.8,12.2,1,1,0.9905761939858372,True Positive
+AR,Arkansas,2021,11.0,14.1,1,1,0.9904368268451592,True Positive
+SC,South Carolina,2021,12.1,11.1,0,1,0.975276032451364,False Positive
+TX,Texas,2021,11.2,13.4,1,1,0.9641464259208068,True Positive
+NM,New Mexico,2021,12.0,11.2,0,1,0.8916340922896874,False Positive
+GA,Georgia,2021,11.5,11.0,0,1,0.8606995482046464,False Positive
+OH,Ohio,2021,11.0,11.4,1,1,0.8360506794079199,True Positive
+IN,Indiana,2021,11.0,11.3,1,1,0.7595291365756816,True Positive
+NC,North Carolina,2021,11.2,10.8,0,1,0.6860388087779882,False Positive
+MO,Missouri,2021,10.0,10.2,0,0,0.3286705844731054,True Negative
+KS,Kansas,2021,10.1,10.2,0,0,0.3205827465586712,True Negative
+NV,Nevada,2021,10.3,8.8,0,0,0.2563652854131754,True Negative
+MI,Michigan,2021,9.5,10.0,0,0,0.2021805487840791,True Negative
+DE,Delaware,2021,10.0,11.9,1,0,0.1410867595151045,False Negative
+AZ,Arizona,2021,9.8,11.4,1,0,0.0631402429949173,False Negative
+VA,Virginia,2021,10.2,11.3,1,0,0.0425256929327778,False Negative
+PA,Pennsylvania,2021,9.5,10.1,0,0,0.0286307669011271,True Negative
+ND,North Dakota,2021,8.9,9.0,0,0,0.0246455691312842,True Negative
+CA,California,2021,10.9,10.7,0,0,0.0138719934226484,True Negative
+IA,Iowa,2021,8.7,10.3,0,0,0.0098231662811062,True Negative
+NE,Nebraska,2021,8.7,9.8,0,0,0.0089599750738597,True Negative
+SD,South Dakota,2021,9.6,8.1,0,0,0.0083735382884773,True Negative
+IL,Illinois,2021,9.7,10.8,0,0,0.007898834316984,True Negative
+NY,New York,2021,10.2,10.0,0,0,0.007688537271538,True Negative
+MD,Maryland,2021,9.8,10.6,0,0,0.0068737962078843,True Negative
+AK,Alaska,2021,8.1,8.5,0,0,0.0049802460738877,True Negative
+WY,Wyoming,2021,7.7,8.1,0,0,0.0044371527393277,True Negative
+RI,Rhode Island,2021,9.2,10.2,0,0,0.0024693918143925,True Negative
+ME,Maine,2021,8.2,9.1,0,0,0.0022888167732852,True Negative
+ID,Idaho,2021,8.8,8.9,0,0,0.0015317027837065,True Negative
+OR,Oregon,2021,8.4,9.1,0,0,0.0011587394102438,True Negative
+CT,Connecticut,2021,9.4,9.2,0,0,0.0010384299155817,True Negative
+NJ,New Jersey,2021,8.8,9.5,0,0,0.0009195511915549,True Negative
+MT,Montana,2021,7.7,7.1,0,0,0.0006945644234154,True Negative
+MN,Minnesota,2021,8.0,9.0,0,0,0.0005182642730374,True Negative
+WI,Wisconsin,2021,8.0,8.9,0,0,0.0004665905567558,True Negative
+HI,Hawaii,2021,8.1,10.4,0,0,0.0001798454629792,True Negative
+WA,Washington,2021,7.9,8.8,0,0,0.0001548118601145,True Negative
+UT,Utah,2021,8.3,9.1,0,0,0.0001400715449062,True Negative
+VT,Vermont,2021,7.2,7.0,0,0,0.000100390541861,True Negative
+DC,District of Columbia,2021,8.4,8.8,0,0,6.968733519081274e-05,True Negative
+NH,New Hampshire,2021,7.3,8.2,0,0,5.781144259840606e-05,True Negative
+MA,Massachusetts,2021,7.9,9.2,0,0,3.646735033064906e-05,True Negative
+CO,Colorado,2021,6.5,7.6,0,0,2.0662588064091542e-05,True Negative

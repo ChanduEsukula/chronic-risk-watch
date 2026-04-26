@@ -1,0 +1,18 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.zip
+.env
+.venv/
+venv/
+.ipynb_checkpoints/
+
+streamlit_app_backup_before_modular.py
+streamlit_app_modular_home_working.py
+
+untitled folder/.DS_Store
+untitled folder/data/.DS_Store
+untitled folder/reports/.DS_Store
+untitled folder/data/raw/

@@ -1,0 +1,8 @@
+figure,description
+01_model_comparison.png,"Compares accuracy, precision, recall, F1-score, and ROC-AUC across models."
+02_logistic_regression_coefficients.png,Shows which predictors have the strongest positive or negative relationship with high-risk diabetes prediction.
+03_top_predicted_high_risk_states.png,Ranks the top 15 states by predicted probability of becoming high-risk for diabetes.
+04_confusion_matrix.png,"Shows true positives, false positives, true negatives, and false negatives."
+05_roc_curve.png,Shows the model's ability to separate high-risk from not high-risk states.
+06_diabetes_trend_selected_states.png,Shows diabetes prevalence trends for selected high-risk states and Minnesota.
+07_prediction_result_breakdown.png,Summarizes prediction outcomes by result type.
