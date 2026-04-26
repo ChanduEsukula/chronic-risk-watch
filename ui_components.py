@@ -73,9 +73,12 @@ def build_share_text(
         lines.append(f"🔗 Combined awareness level: {combined_level}")
 
     lines.append("")
-    lines.append(
-        "Note: The state score is a model classification signal, not a real-world disease probability."
-    )
+
+    if state_name is not None:
+        lines.append(
+            "Note: The state score is a model classification signal, not a real-world disease probability."
+        )
+
     lines.append("This is for educational awareness only, not medical diagnosis.")
     lines.append("Built with public health data + machine learning.")
 
@@ -106,7 +109,8 @@ def create_downloadable_report(
                 "PERSONAL RISK-AWARENESS RESULT",
                 "-" * 38,
                 f"Risk-awareness level: {personal_band}",
-                f"Model probability: {personal_probability:.1%}",
+                f"Personal Risk-Awareness Score: {personal_probability * 100:.1f} / 100",
+                "Note: This score is an educational awareness signal, not a medical diagnosis.",
                 "",
             ]
         )
