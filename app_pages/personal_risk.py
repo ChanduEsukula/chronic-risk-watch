@@ -13,13 +13,14 @@ from ui_components import (
     render_factor_cards,
     build_share_text,
     create_downloadable_report,
+    create_pdf_report,
     render_share_box,
     render_guidance_card,
 )
 
 
 # ============================================================
-# pages/personal_risk.py
+# app_pages/personal_risk.py
 # Personal Diabetes Risk Awareness Check page
 # ============================================================
 
@@ -128,6 +129,7 @@ def render_personal_risk_page(models):
                 max_value=30,
                 value=0,
             )
+
             physical_health_days = st.slider(
                 "Poor physical health days in past 30 days",
                 min_value=0,
@@ -215,7 +217,10 @@ def render_personal_risk_page(models):
         c1, c2, c3 = st.columns(3)
 
         with c1:
-            st.metric("Personal Risk-Awareness Score", f"{personal_probability * 100:.1f} / 100")
+            st.metric(
+                "Personal Risk-Awareness Score",
+                f"{personal_probability * 100:.1f} / 100",
+            )
 
         with c2:
             label_text = "Flagged for awareness" if personal_prediction == 1 else "Not flagged"
@@ -366,11 +371,13 @@ def render_personal_risk_page(models):
             factors=factors,
         )
 
+        pdf_report = create_pdf_report(report_text)
+
         st.download_button(
-            label="📄 Download my mini report",
-            data=report_text,
-            file_name="chronic_risk_watch_personal_report.txt",
-            mime="text/plain",
+            label="📄 Download PDF report",
+            data=pdf_report,
+            file_name="chronic_risk_watch_personal_report.pdf",
+            mime="application/pdf",
         )
 
         with st.expander("Show technical model input row"):

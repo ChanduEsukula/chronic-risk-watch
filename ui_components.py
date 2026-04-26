@@ -1,9 +1,17 @@
 import streamlit as st
+from io import BytesIO
+from html import escape
+
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.enums import TA_LEFT
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.lib.units import inch
 
 
 # ============================================================
 # ui_components.py
-# Reusable visual cards, reports, share boxes
+# Reusable visual cards, reports, share boxes, PDF reports
 # ============================================================
 
 
@@ -163,6 +171,95 @@ def create_downloadable_report(
     )
 
     return "\n".join(lines)
+
+
+def create_pdf_report(report_text):
+    """
+    Convert plain report text into a simple downloadable PDF.
+    """
+    buffer = BytesIO()
+
+    doc = SimpleDocTemplate(
+        buffer,
+        pagesize=letter,
+        rightMargin=0.75 * inch,
+        leftMargin=0.75 * inch,
+        topMargin=0.75 * inch,
+        bottomMargin=0.75 * inch,
+    )
+
+    styles = getSampleStyleSheet()
+
+    title_style = ParagraphStyle(
+        "CustomTitle",
+        parent=styles["Title"],
+        fontName="Helvetica-Bold",
+        fontSize=18,
+        leading=22,
+        alignment=TA_LEFT,
+        spaceAfter=14,
+    )
+
+    heading_style = ParagraphStyle(
+        "CustomHeading",
+        parent=styles["Heading2"],
+        fontName="Helvetica-Bold",
+        fontSize=13,
+        leading=16,
+        spaceBefore=12,
+        spaceAfter=6,
+    )
+
+    body_style = ParagraphStyle(
+        "CustomBody",
+        parent=styles["BodyText"],
+        fontName="Helvetica",
+        fontSize=10.5,
+        leading=14,
+        spaceAfter=5,
+    )
+
+    story = []
+    lines = report_text.split("\n")
+
+    for i, line in enumerate(lines):
+        clean_line = line.strip()
+
+        if not clean_line:
+            story.append(Spacer(1, 0.08 * inch))
+            continue
+
+        # Escape special characters so ReportLab does not treat them as HTML tags.
+        safe_line = escape(clean_line)
+
+        # First line is report title.
+        if i == 0:
+            story.append(Paragraph(safe_line, title_style))
+            continue
+
+        # Skip underline separator lines.
+        if set(clean_line) in [{"="}, {"-"}]:
+            continue
+
+        # Section headings are uppercase lines.
+        if clean_line.isupper() and len(clean_line) > 3:
+            story.append(Paragraph(safe_line, heading_style))
+            continue
+
+        # Bullet lines.
+        if clean_line.startswith("- "):
+            safe_bullet = escape(clean_line[2:])
+            story.append(Paragraph(f"• {safe_bullet}", body_style))
+            continue
+
+        story.append(Paragraph(safe_line, body_style))
+
+    doc.build(story)
+
+    pdf_bytes = buffer.getvalue()
+    buffer.close()
+
+    return pdf_bytes
 
 
 def render_share_box(share_text):

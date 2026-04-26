@@ -16,12 +16,13 @@ from ui_components import (
     render_factor_cards,
     build_share_text,
     create_downloadable_report,
+    create_pdf_report,
     render_share_box,
 )
 
 
 # ============================================================
-# pages/combined_view.py
+# app_pages/combined_view.py
 # Combined Personal + State Risk View page
 # ============================================================
 
@@ -432,11 +433,13 @@ def render_combined_view_page(models, data):
             factors=factors,
         )
 
+        pdf_report = create_pdf_report(report_text)
+
         st.download_button(
-            label="📄 Download combined mini report",
-            data=report_text,
-            file_name="chronic_risk_watch_combined_report.txt",
-            mime="text/plain",
+            label="📄 Download PDF report",
+            data=pdf_report,
+            file_name="chronic_risk_watch_combined_report.pdf",
+            mime="application/pdf",
         )
 
         with st.expander("Show technical personal model input row"):

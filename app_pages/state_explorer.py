@@ -9,12 +9,13 @@ from helpers import (
 from ui_components import (
     build_share_text,
     create_downloadable_report,
+    create_pdf_report,
     render_share_box,
 )
 
 
 # ============================================================
-# pages/state_explorer.py
+# app_pages/state_explorer.py
 # State Diabetes Early Warning Explorer page
 # ============================================================
 
@@ -232,9 +233,11 @@ def render_state_explorer_page(data):
         state_probability=state_score,
     )
 
+    pdf_report = create_pdf_report(report_text)
+
     st.download_button(
-        label="📄 Download state mini report",
-        data=report_text,
-        file_name="chronic_risk_watch_state_report.txt",
-        mime="text/plain",
+        label="📄 Download PDF report",
+        data=pdf_report,
+        file_name="chronic_risk_watch_state_report.pdf",
+        mime="application/pdf",
     )
