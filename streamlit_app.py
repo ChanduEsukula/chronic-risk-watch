@@ -1,10 +1,10 @@
 import streamlit as st
-from pages.home import render_home_page
-from pages.personal_risk import render_personal_risk_page
-from pages.state_explorer import render_state_explorer_page
-from pages.combined_view import render_combined_view_page
-from pages.compare_states import render_compare_states_page
-from pages.model_insights import render_model_insights_page
+from app_pages.home import render_home_page
+from app_pages.personal_risk import render_personal_risk_page
+from app_pages.state_explorer import render_state_explorer_page
+from app_pages.combined_view import render_combined_view_page
+from app_pages.compare_states import render_compare_states_page
+from app_pages.model_insights import render_model_insights_page
 
 from app_config import PAGES
 from app_styles import apply_styles
